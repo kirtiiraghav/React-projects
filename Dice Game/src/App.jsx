@@ -1,10 +1,16 @@
+import { useState } from 'react'
 import Home from './components/Home'
+import GamePage from './components/GamePage'
 
 function App() {
+    const [isStateGame, setIsStartGame] = useState(false)
+    const togglePlayButton = () => {
+        setIsStartGame((prevState) => !prevState)
+    }
 
     return (
         <>
-            <Home />
+            {isStateGame ? <GamePage /> : <Home toggleBtn = {togglePlayButton} />}
         </>
     )
 }

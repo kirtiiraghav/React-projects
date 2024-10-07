@@ -1,7 +1,7 @@
 import dice from '../../public/images/dices 1.svg'
 import styled from 'styled-components'
 
-export default function Home() {
+export default function Home({ toggleBtn }) {
     return (
         <Container>
             <div className='dice-img'>
@@ -9,7 +9,7 @@ export default function Home() {
             </div>
             <div className='content'>
                 <h1>DICE GAME</h1>
-                <Button>Play Now</Button>
+                <Button onClick={toggleBtn}>Play Now</Button>
             </div>
         </Container>
     )
