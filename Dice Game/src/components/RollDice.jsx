@@ -1,18 +1,6 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 
-export default function RollDice() {
-    const [rollDice, setRollDice] = useState(1)
-
-    const generateRandomNumber = (min, max) => {
-        return Math.floor(Math.random() * (max - min + 1) + min)
-    }
-
-    const rollDiceFunction = () => {
-        const randomNumber = generateRandomNumber(1, 6)
-        setRollDice(randomNumber)
-    }
-
+export default function RollDice({ rollDice, rollDiceFunction }) {
     return (
         <Dice>
             <div onClick={rollDiceFunction}>
@@ -27,6 +15,7 @@ const Dice = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 48px;
 
     div{
         &:hover{
