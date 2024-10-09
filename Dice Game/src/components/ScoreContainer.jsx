@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 export default function ScoreContainer() {
@@ -10,8 +11,10 @@ export default function ScoreContainer() {
 }
 
 const TotalScore = styled.div`
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    
+
     h1{
         font-size: 80px;
         line-height: 80px;
