@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 
-export default function DiceValueSelector() {
-    const [selectedNumber, setSelectedNumber] = useState()
+export default function DiceValueSelector({ selectedNumber, setSelectedNumber, error, setError }) {
+
     const diceArray = [1, 2, 3, 4, 5, 6]
-    
+
     return (
         <SelectorContainer>
-            <div>
+            <p className='error'>{error}</p>
+            <div className='dice-box'>
                 {
                     diceArray.map((number, i) => {
-                        return <Box selected={selectedNumber === number} onClick={() => setSelectedNumber(number)} key={i}>{number}</Box>
+                        return <Box selected={selectedNumber === number} onClick={() => {
+                            setError('')
+                            setSelectedNumber(number)
+                        }} key={i}>{number}</Box>
                     })
                 }
             </div>
@@ -22,9 +25,13 @@ export default function DiceValueSelector() {
 const SelectorContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: end;
 
-    div{
+    .error{
+        color: red;
+    }
+
+    .dice-box{
         display: flex;
         gap: 24px;
     }
@@ -43,10 +50,9 @@ const Box = styled.div`
     font-size: 24px;
     font-weight: 700;
     display: grid;
-    align-items: center;
-    justify-content: center;
-    background-color: ${(props)=> props.selected ? 'black' : 'white'};
-    color: ${(props)=> !props.selected ? 'black' : 'white'};
+    place-items:center;
+    background-color: ${(props) => props.selected ? 'black' : 'white'};
+    color: ${(props) => !props.selected ? 'black' : 'white'};
 
     &:hover{
         cursor: pointer;
