@@ -1,5 +1,6 @@
 import dice from '../../public/images/dices 1.svg'
 import styled from 'styled-components'
+import { Button } from '../styled/Button'
 
 export default function Home({ toggleBtn }) {
     return (
@@ -37,23 +38,5 @@ const Container = styled.section`
             font-size:96px ;
             white-space: nowrap;
         }
-    }
-`
-const Button = styled.button`
-    min-width:220px;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    padding:10px 18px;
-    border: 1px solid transparent;
-    font-size: 16px;
-    transition:0.3s background-color ease-in-out;
-    
-    &:hover{
-        cursor: pointer;
-        background-color: #ffffff;
-        border: 1px solid black;
-        color: black;
-        transition:0.3s background-color ease-in-out;
     }
 `
