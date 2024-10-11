@@ -6,10 +6,11 @@ import { useState } from "react"
 export default function App() {
     const [data, setData] = useState()
     const [query, setQuery] = useState('')
+    const [selectedBtn, setSelectedBtn] = useState('all')
     return (
         <MainContainer>
-            <Header data={data} setData={setData} setQuery={setQuery} />
-            <Hero data={data} setData={setData} query={query} />
+            <Header selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn} setQuery={setQuery} />
+            <Hero selectedBtn={selectedBtn} data={data} setData={setData} query={query} />
         </MainContainer>
     )
 }

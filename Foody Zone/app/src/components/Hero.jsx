@@ -2,12 +2,11 @@ import styled from 'styled-components'
 import FoodCard from './FoodCard'
 import { useEffect, useState } from 'react'
 
-export  const BASE_URL = 'http://localhost:9000'
+export const BASE_URL = 'http://localhost:9000'
 
-export default function Hero({data, setData, query}) {
+export default function Hero({ data, setData, query, selectedBtn }) {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
-
     useEffect(() => {
         setLoading(true)
         fetch(BASE_URL)
@@ -36,8 +35,12 @@ export default function Hero({data, setData, query}) {
         <HeroSection>
             <CardsContainer>
                 {
-                    data?.filter(({name})=>{
-                        return name.toLowerCase().includes(query)
+                    data?.filter(({ name, type }) => {
+                        const matchesCategory = selectedBtn === 'all' || type.toLowerCase() === selectedBtn;
+                        const matchesQuery = name.toLowerCase().includes(query.toLowerCase());
+
+                        // Return true only if both the category and search query match
+                        return matchesCategory && matchesQuery;
                     }).map((foodItem) => {
                         return <FoodCard key={foodItem.name}
                             image={foodItem.image}

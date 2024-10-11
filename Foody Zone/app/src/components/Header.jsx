@@ -3,7 +3,7 @@ import logo from '../../public/images/logo.svg'
 import SearchInputField from './SearchInputField'
 import Button from './Button'
 
-export default function Header({setQuery}) {
+export default function Header({ setQuery, setSelectedBtn }) {
     const filterOptions = ['All', 'Breakfast', 'Lunch', 'Dinner']
     return (
         <TopSection>
@@ -15,7 +15,7 @@ export default function Header({setQuery}) {
             </div>
             <div className='filter'>
                 {
-                    filterOptions.map((option, i) => <Button key={i} label={option} />)
+                    filterOptions.map((option, i) => <Button setSelectedBtn={setSelectedBtn} key={i} label={option} />)
                 }
             </div>
         </TopSection>
