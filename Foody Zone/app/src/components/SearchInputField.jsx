@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function SearchInputField() {
+export default function SearchInputField({setQuery}) {
     return (
-        <SearchField placeholder='Search Food' />
+        <SearchField onChange={(e)=>{
+            setQuery(e.target.value.toLowerCase());
+        }} placeholder='Search Food' />
     )
 }
 

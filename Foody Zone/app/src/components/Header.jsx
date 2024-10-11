@@ -3,7 +3,7 @@ import logo from '../../public/images/logo.svg'
 import SearchInputField from './SearchInputField'
 import Button from './Button'
 
-export default function Header() {
+export default function Header({setQuery}) {
     const filterOptions = ['All', 'Breakfast', 'Lunch', 'Dinner']
     return (
         <TopSection>
@@ -11,7 +11,7 @@ export default function Header() {
                 <div>
                     <img src={logo} alt="logo" />
                 </div>
-                <SearchInputField />
+                <SearchInputField setQuery={setQuery} />
             </div>
             <div className='filter'>
                 {

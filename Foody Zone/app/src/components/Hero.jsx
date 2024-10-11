@@ -4,8 +4,7 @@ import { useEffect, useState } from 'react'
 
 export  const BASE_URL = 'http://localhost:9000'
 
-export default function Hero() {
-    const [data, setData] = useState()
+export default function Hero({data, setData, query}) {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
@@ -37,7 +36,9 @@ export default function Hero() {
         <HeroSection>
             <CardsContainer>
                 {
-                    data?.map((foodItem) => {
+                    data?.filter(({name})=>{
+                        return name.toLowerCase().includes(query)
+                    }).map((foodItem) => {
                         return <FoodCard key={foodItem.name}
                             image={foodItem.image}
                             name={foodItem.name}
