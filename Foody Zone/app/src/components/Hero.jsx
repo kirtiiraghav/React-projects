@@ -56,14 +56,13 @@ export default function Hero({ data, setData, query, selectedBtn }) {
 }
 
 const HeroSection = styled.section`
-    background-color: #323334;
     background-image: url('/images/background.svg');
     background-size: cover;
     min-height: calc(100vh - 211.33px);
     display: flex;
     align-items: center;
     padding: 25px;
-
+    justify-content: center;
     
     @media (max-width: 600px) {
         min-height: calc(100vh - 222px);

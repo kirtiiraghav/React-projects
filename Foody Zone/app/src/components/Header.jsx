@@ -23,7 +23,6 @@ export default function Header({ setQuery, setSelectedBtn }) {
 }
 
 const TopSection = styled.header`
-    background-color: #323334;
     padding: 12px;
     
     .top-header{

@@ -10,7 +10,6 @@ export default function Button({label, setSelectedBtn}) {
 }
 
 const RedButton = styled.button`
-    color: white;
     background-color: #FF4343;
     border: none;
     outline: none;
