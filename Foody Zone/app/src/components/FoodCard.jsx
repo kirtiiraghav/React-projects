@@ -4,7 +4,6 @@ import { BASE_URL } from './Hero';
 
 
 export default function FoodCard({ image, name, type, price, desc }) {
-    console.log(type);
     return (
         <Card>
             <div className='image-container'>
@@ -14,7 +13,7 @@ export default function FoodCard({ image, name, type, price, desc }) {
                 <p className='food-name'>{name}</p>
                 <p className='text'>{desc}</p>
                 <div className='price-btn'>
-                    <Button label={`$${price}.00`} />
+                    <Button label={`$${price.toFixed(2)}`} />
                 </div>
             </div>
         </Card>
