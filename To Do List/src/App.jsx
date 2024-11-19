@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
 
 function App() {
-    const [todos, setTodos] = useState(['a', 'b', 'c'])
+    const [todos, setTodos] = useState(() => {
+        // Retrieve initial todos from localStorage
+        const savedTodos = localStorage.getItem('todos');
+        return savedTodos ? JSON.parse(savedTodos) : []; // Default to an empty array if none are saved
+    });
     const [todo, setTodo] = useState('')
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }, [todos])
 
     const handleAddTodo = (newTodoItem) => {
         const newTodoList = [...todos, newTodoItem]
