@@ -2,29 +2,42 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Inter', 'sans-serif';
 }
 
-body {
-    background-color: #EFF6FF;
-    padding: 14px
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    background: #eff6ff;
+    gap: 14px;
 }
+
 
 .input-header {
+    display: flex;
+    align-items: stretch;
+}
+
+.input-header,
+ul {
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    gap: 12px;
-    justify-content: center;
+    gap: 14px;
 }
 
 .input-header input {
-    font-family: "Press Start 2P", system-ui;
-    font-size: 20px;
-    padding: 14px 18px;
+    flex: 1;
+    border-radius: 14px;
     outline: none;
-    border-radius: 12px;
+    width: 100%;
+    padding: 14px 18px;
     border: none;
+    outline: none;
+    background: white;
+    font-family: "Press Start 2P", system-ui;
 }
 
 .input-header button {
@@ -32,7 +45,28 @@ body {
     font-size: 20px;
     cursor: pointer;
     border: none;
+    outline: none;
     background-color: white;
     padding: 14px 18px;
     border-radius: 12px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 14px;
+    background: white;
+}
+
+ul li p{
+    flex: 1;
 }
