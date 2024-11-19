@@ -68,7 +68,7 @@ ul li {
     background: white;
 }
 
-ul li p{
+ul li p {
     flex: 1;
 }
 
@@ -76,16 +76,27 @@ ul li p{
     display: flex;
     align-items: center;
     gap: 14px;
-  }
-  
-  .actions-container button {
+}
+
+.actions-container button {
     transition-duration: 200ms;
     border: none;
     background: transparent;
     cursor: pointer;
-  }
-  
-  .actions-container button:hover {
+}
+
+.actions-container button:hover {
     opacity: 0.7;
-  }
-  
+}
+
+@media (min-width: 640px) {
+
+    header button,
+    header input {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
