@@ -14,6 +14,9 @@ export default {
                 purple: '#5F00D9',
                 orange:'#F6820C'
             },
+            fontFamily: {
+                inter: ["Inter", 'sans-serif'], 
+              },
         },
     },
     plugins: [],
